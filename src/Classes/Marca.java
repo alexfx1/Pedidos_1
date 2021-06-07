@@ -6,6 +6,35 @@ public class Marca {
     protected String descricaoMarca;
     public int count;
 
+
+    public Marca() {
+    }
+
+
+    public int getIdMarca() {
+        return this.idMarca;
+    }
+
+    public void setIdMarca(int idMarca) {
+        this.idMarca = idMarca;
+    }
+    public void setDescricaoMarca(String descricaoMarca) {
+        this.descricaoMarca = descricaoMarca;
+    }
+
+    public int getCount() {
+        return this.count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+
+
+
+
+
     public int getId(){
         return idMarca;
     }
