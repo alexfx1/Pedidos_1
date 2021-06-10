@@ -60,13 +60,13 @@ public class Cliente {
 
 
     public String printCliente() {
-        return "{" +
-            " id='" + id + "'" +
+        return " id='" + id + "'" +
             ", nome='" + nome + "'" +
             ", razaosocial='" + razaosocial + "'" +
             ", fatasia='" + fatasia + "'" +
-            ", endereco='" + endereco + "'" +
-            "}";
+            ", endereco='" + endereco;
     }
+
+    
         
 }

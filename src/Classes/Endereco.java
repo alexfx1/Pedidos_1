@@ -11,8 +11,8 @@ public class Endereco extends Estado{
     private int contador=0;
     
 
-    public Endereco(int idEndereco, String logradouro, int numero, String quadra, float lote, Estado estado, String bairro, int idEstado) throws Exception{
-        super(idEstado);
+    public Endereco(int idEstado, String nomeEstado, String uf){
+        super(idEstado,nomeEstado,uf);
         this.setLogradouro(logradouro);
         this.setNumero(numero);
         this.setQuadra(quadra);
@@ -82,6 +82,5 @@ public class Endereco extends Estado{
 		return "Enderecos [id_endereco=" + idEndereco + ", logradouro=" + logradouro + ", numero=" + numero
 				+ ", quadra=" + quadra + ", lote=" + lote + ", bairro=" + bairro + ", uf=" + idEstado + "]";
 	} */
-
-
+    
 }
