@@ -1,5 +1,4 @@
 package Classes.Cliente;
-
 import Classes.Endereco;
 
 public class Cliente {
@@ -7,7 +6,7 @@ public class Cliente {
     private String nome;
     private String razaosocial; 
     private String fatasia;
-    private Endereco endereco = new Endereco();
+    private Endereco endereco;
     private int qtdClientes = 0;
 
     public Cliente(int id, String nome, String razaosocial, String fatasia, Endereco endereco) {
@@ -18,12 +17,13 @@ public class Cliente {
         this.endereco = endereco;
     }
 
+
     public int getId() {
         return this.id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id = qtdClientes++;
     }
 
     public String getNome() {
@@ -58,13 +58,15 @@ public class Cliente {
         this.endereco = endereco;
     }
 
-    public int getQtdClientes() {
-        return this.qtdClientes;
+
+    public String printCliente() {
+        return "{" +
+            " id='" + id + "'" +
+            ", nome='" + nome + "'" +
+            ", razaosocial='" + razaosocial + "'" +
+            ", fatasia='" + fatasia + "'" +
+            ", endereco='" + endereco + "'" +
+            "}";
     }
-
-    public void setQtdClientes(int qtdClientes) {
-        this.qtdClientes = qtdClientes++;
-    }
-
-
+        
 }
