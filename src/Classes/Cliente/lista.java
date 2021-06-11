@@ -1,18 +1,24 @@
 package Classes.Cliente;
 import java.util.ArrayList;
 
-import javax.lang.model.element.Element;
-
 public class Lista {
     public ArrayList<Cliente> Lista = new ArrayList<Cliente>();
 
     public ArrayList<Cliente> inserir(Cliente client) {
+	
 		Lista.add(client);
 		return Lista;
 	}
 
-	public ArrayList<Cliente> deletar(Cliente client){
-		Lista.remove(client);
+
+	public ArrayList<Cliente> deletar(int idCliente) {
+		System.out.println("Testando ID...");
+		for(Cliente cliente : Lista){
+			if(cliente.getId() == idCliente){
+				Lista.remove(cliente);
+			}
+		}
+		System.out.println("Cliente deletado com Sucesso!");
 		return Lista;
 	}
 

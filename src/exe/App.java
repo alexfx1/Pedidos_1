@@ -29,42 +29,51 @@ public class App {
             System.out.println("############ MENU DE OPCOES #############");
             System.out.println("################ Digite #################");
             System.out.println("1. Preencher Cliente: ");
-            System.out.println("2. Imprimir lista de cliente: ");
+            System.out.println("2. Deletar lista de cliente: ");
+            System.out.println("3. Imprimir lista de cliente: ");
+            System.out.println("4. Encerrar programa");
             System.out.println("#########################################");
             op = scanner.nextInt();
 
-            //Estado estado = new Estado(1, "nome", "MG");
-            //Endereco endereco1 = new Endereco(1, "Rua Paris", 1300, "quadra", 13.5f,  null, "bairro");
-            //Cliente cliente = new Cliente(1, nome, razaosocial, fatasia, null);
+            Estado estado = new Estado(1, "nome", "MG");
+            Endereco endereco = new Endereco(1, "nomeEstado", "uf");
 
             switch(op){
                                    
                 case 1:
-                Cliente cliente1 = new Cliente(1, "PPPP", "razacial", "fasia", null);
-                Cliente cliente2 = new Cliente(2, "AAAA", "raosocial", "tasia", null);
-                Cliente cliente3 = new Cliente(3, "GGGG", "zaosocial", "faia", null);
 
-                for(Cliente c : clientes){
-                    System.out.println(c);
-                }
-
-                /*System.out.println(" \nDigite o nome: ");
+                System.out.println(" \nDigite o id: ");
+                int id = scanner.nextInt();
+                System.out.println(" \nDigite o nome: ");
                 nome = scanner.nextLine();
                 System.out.println(" \nDigite a razaosocial: ");
                 razaosocial = scanner.nextLine();
                 System.out.println(" \nDigite a fantasia: ");
-                fatasia = scanner.nextLine();*/
+                fatasia = scanner.nextLine();
+
+                Cliente cliente = new Cliente(id, nome, razaosocial, fatasia, endereco);
+                clientes = listacliente.inserir(cliente);
                     break;
 
                 case 2:
-                    System.out.println("hi");
+                    System.out.println("Digite o id que queira deletar: ");
+                    id = scanner.nextInt();
+                    cliente = new Cliente(id, nome, razaosocial, fatasia, endereco);
+                    clientes = listacliente.deletar(id);
+                    break;
+                
+                case 3:
+                for(Cliente c : clientes){
+                    System.out.println(c.toString());
+                }
                     break;
 
                 default:
                     System.out.print("\n Encerrando...");
                     break;
             }
-        } while(op != 3);
+        } while(op != 4);
         
     }
+    
 }

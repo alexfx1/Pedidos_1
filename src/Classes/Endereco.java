@@ -11,7 +11,7 @@ public class Endereco extends Estado{
     private int contador=0;
     
 
-    public Endereco(int idEstado, String nomeEstado, String uf){
+    public Endereco(int idEndereco, String logradouro, int numero, String quadra, float lote, Estado estado, String bairro, int idEstado, String nomeEstado, String uf){
         super(idEstado,nomeEstado,uf);
         this.setLogradouro(logradouro);
         this.setNumero(numero);
@@ -19,6 +19,17 @@ public class Endereco extends Estado{
         this.setLote(lote);
         this.setEstado(estado);
         this.setBairro(bairro);
+    }
+
+
+    public Endereco(int idEstado, String nomeEstado, String uf){
+        super(idEstado,nomeEstado,uf);
+        /*this.setLogradouro(logradouro);
+        this.setNumero(numero);
+        this.setQuadra(quadra);
+        this.setLote(lote);
+        this.setEstado(estado);
+        this.setBairro(bairro);*/
     }
 
     public int getId() {

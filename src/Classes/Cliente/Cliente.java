@@ -7,7 +7,7 @@ public class Cliente {
     private String razaosocial; 
     private String fatasia;
     private Endereco endereco;
-    private int qtdClientes = 0;
+    //private int qtdClientes = 0;
 
     public Cliente(int id, String nome, String razaosocial, String fatasia, Endereco endereco) {
         this.id = id;
@@ -23,7 +23,7 @@ public class Cliente {
     }
 
     public void setId(int id) {
-        this.id = qtdClientes++;
+        this.id = id;
     }
 
     public String getNome() {
@@ -59,14 +59,13 @@ public class Cliente {
     }
 
 
-    public String printCliente() {
+    @Override
+    public String toString() {
         return " id='" + id + "'" +
             ", nome='" + nome + "'" +
             ", razaosocial='" + razaosocial + "'" +
             ", fatasia='" + fatasia + "'" +
             ", endereco='" + endereco;
     }
-
-    
         
 }
