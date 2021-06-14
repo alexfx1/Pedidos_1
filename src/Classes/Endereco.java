@@ -1,6 +1,6 @@
-package Classes;
+package classes;
 
-public class Endereco extends Estado{
+public class Endereco {
     private int idEndereco;
     private String logradouro; 
     private int numero;
@@ -10,26 +10,7 @@ public class Endereco extends Estado{
     private String bairro;
     private int contador=0;
     
-
-    public Endereco(int idEndereco, String logradouro, int numero, String quadra, float lote, Estado estado, String bairro, int idEstado, String nomeEstado, String uf){
-        super(idEstado,nomeEstado,uf);
-        this.setLogradouro(logradouro);
-        this.setNumero(numero);
-        this.setQuadra(quadra);
-        this.setLote(lote);
-        this.setEstado(estado);
-        this.setBairro(bairro);
-    }
-
-
-    public Endereco(int idEstado, String nomeEstado, String uf){
-        super(idEstado,nomeEstado,uf);
-        /*this.setLogradouro(logradouro);
-        this.setNumero(numero);
-        this.setQuadra(quadra);
-        this.setLote(lote);
-        this.setEstado(estado);
-        this.setBairro(bairro);*/
+    public Endereco(){
     }
 
     public int getId() {
@@ -86,6 +67,18 @@ public class Endereco extends Estado{
 
     public void setBairro(String bairro) {
         this.bairro = bairro;
+    }
+
+    public void imprimeEndereco(){
+        System.out.println(" \n ---------- Endereco ----------");
+        System.out.println("Id do endereco: " + this.idEndereco);
+        System.out.println("logradouro: " + this.logradouro);
+        System.out.println("numero: " + this.numero);
+        System.out.println("quadra: " + this.quadra);
+        System.out.println("lote: " + this.lote);
+        System.out.println("bairro: " + this.bairro);
+        estado.imprimeEstado();
+        
     }
 
     /*@Override //imprimir

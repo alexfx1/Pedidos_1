@@ -1,4 +1,4 @@
-package Classes.Cliente;
+package classes.cliente;
 import java.util.ArrayList;
 
 public class excluirCliente {

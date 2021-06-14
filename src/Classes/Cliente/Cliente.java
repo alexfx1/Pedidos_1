@@ -1,20 +1,24 @@
-package Classes.Cliente;
-import Classes.Endereco;
+package classes.cliente;
+import classes.Endereco;
 
 public class Cliente {
     private int id;
-    private String nome;
     private String razaosocial; 
     private String fatasia;
     private Endereco endereco;
+    
     //private int qtdClientes = 0;
 
-    public Cliente(int id, String nome, String razaosocial, String fatasia, Endereco endereco) {
+    /*public Cliente(int id, String nome, String razaosocial, String fatasia, Endereco endereco) {
         this.id = id;
         this.nome = nome;
         this.razaosocial = razaosocial;
         this.fatasia = fatasia;
         this.endereco = endereco;
+    }*/
+
+    public Cliente(){
+
     }
 
 
@@ -24,14 +28,6 @@ public class Cliente {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getNome() {
-        return this.nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getRazaosocial() {
@@ -58,14 +54,21 @@ public class Cliente {
         this.endereco = endereco;
     }
 
-
-    @Override
-    public String toString() {
-        return " id='" + id + "'" +
-            ", nome='" + nome + "'" +
-            ", razaosocial='" + razaosocial + "'" +
-            ", fatasia='" + fatasia + "'" +
-            ", endereco='" + endereco;
+    public void imprimirCliente(){
+        System.out.println(" \n ---------- Cliente ----------");
+        System.out.println("Id: " + this.id);
+        System.out.println("razaosocial: " + this.razaosocial);
+        System.out.println("fantasia: " + this.fatasia);
+        endereco.imprimeEndereco();
     }
+
+    /*@Override
+    public String toString() {
+        return " id='" + id +  
+            " " +
+            ", razaosocial='" + razaosocial + " " +
+            ", fatasia='" + fatasia + " " +
+            ", endereco='" + endereco;
+    }*/
         
 }

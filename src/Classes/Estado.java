@@ -1,16 +1,12 @@
-package Classes;
+package classes;
 
 public class Estado {
-    private int numeroID=0;
     private int idEstado;
     private String nomeEstado; 
     private String uf;
 
 
-    public Estado(int idEstado, String nomeEstado, String uf) {
-        this.idEstado = idEstado;
-        this.nomeEstado = nomeEstado;
-        this.uf = uf;
+    public Estado() {
     }
 
     public int getIdEstado() {
@@ -18,7 +14,7 @@ public class Estado {
     }
 
     public void setIdEstado(int idEstado) {
-        this.idEstado = numeroID++;
+        this.idEstado = idEstado;
     }
 
     public String getNomeEstado() {
@@ -34,16 +30,23 @@ public class Estado {
     }
 
     public void setUf(String uf) throws Exception{
+        this.uf = uf;
+    }
+
+
+    /*public void setUf(String uf) throws Exception{
         if(uf!=nomeEstado){
             throw new Exception("estado nao condiz com sigla!");
         } else {
         this.uf = uf;
         }
-    }
+    }*/
 
-    @Override
-    public String toString() {
-        return "Estados [id_estado=" + idEstado + ", nome_estado=" + nomeEstado + ", uf=" + uf + "]";
+    public void imprimeEstado(){
+        System.out.println(" \n ---------- Estado ----------");
+        System.out.println("Id do endereco: " + this.idEstado);
+        System.out.println("logradouro: " + this.nomeEstado);
+        System.out.println("numero: " + this.uf);
     }
 
 }

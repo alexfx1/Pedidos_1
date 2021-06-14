@@ -1,5 +1,4 @@
-package Classes;
-import java.util.ArrayList;
+package classes;
 
 public class Marca {
     protected int idMarca;
