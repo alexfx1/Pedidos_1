@@ -46,9 +46,9 @@ public class Estado {
 
     public void imprimeEstado(){
         System.out.println(" \n ---------- Estado ----------");
-        System.out.println("Id do endereco: " + this.idEstado);
-        System.out.println("logradouro: " + this.nomeEstado);
-        System.out.println("numero: " + this.uf);
+        System.out.println("Id do estado: " + this.idEstado);
+        System.out.println("nome do estado: " + this.nomeEstado);
+        System.out.println("uf: " + this.uf);
         System.out.println(" \n ############################");
     }
 

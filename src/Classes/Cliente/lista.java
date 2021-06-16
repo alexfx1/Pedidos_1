@@ -21,7 +21,7 @@ public class Lista {
 	}
 
 
-	public ArrayList<Cliente> deletar(int idCliente) {
+	/*public ArrayList<Cliente> deletar(int idCliente) {
 		System.out.println("Testando ID...");
 		for(Cliente cliente : Lista){
 			if(cliente.getId() != idCliente){
@@ -35,24 +35,26 @@ public class Lista {
 			}
 		}
 		return Lista;
-	}
+	}*/
 
-	public ArrayList<Cliente> buscaID(int idCliente){
+	public Cliente buscaID(int idCliente){
 		for(Cliente cliente : Lista){
 			if(cliente.getId() == idCliente){
 				System.out.println("id encontrado\n");
+				return cliente;
 			} 
 		}
-		return Lista;
+		return new Cliente();
 	}
 
-	public ArrayList<Cliente> alterarCliente(int idCliente){
+	public ArrayList<Cliente> alterarCliente(int idBusca){
 		System.out.println("Digite a nova razao social: ");
 		String razaosocial = scanner.next();
 		System.out.println("Digite a nova fantasia: ");
 		String fatasia = scanner.next();
 
-		Cliente cliente = buscaID(idCliente).get(idCliente);
+		Cliente cliente = buscaID(idBusca);
+		
 		cliente.setRazaosocial(razaosocial);
 		cliente.setFatasia(fatasia);
 
@@ -72,7 +74,7 @@ public class Lista {
 
 
 
-	/*public ArrayList<Cliente> deletar(int idCliente) {
+	public ArrayList<Cliente> deletar(int idCliente) {
 		System.out.println("Testando ID...");
 		for(Cliente cliente : Lista){
 			if(cliente.getId() == idCliente){
@@ -80,9 +82,9 @@ public class Lista {
 				return Lista;
 			}
 		}
-		System.out.println("Cliente deletado com Sucesso!");
+		System.out.println("Cliente com esse id não encontrado!");
 		return Lista;
-	}*/
+	}
 
 	/*public ArrayList<Cliente> alterar(Cliente client){
 		Lista.set(int index, Cliente Element);

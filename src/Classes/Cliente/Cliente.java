@@ -47,7 +47,8 @@ public class Cliente {
     }
 
     public Endereco getEndereco() {
-        return this.endereco;
+        //tratamento de null pointer
+        return this.endereco == null ? new Endereco() : this.endereco;
     }
 
     public void setEndereco(Endereco endereco) {

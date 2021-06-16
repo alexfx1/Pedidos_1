@@ -56,7 +56,7 @@ public class Endereco {
     }
 
     public Estado getEstado() {
-        return this.estado;
+        return this.estado == null ? new Estado() : this.estado;
     }
 
     public void setEstado(Estado estado) {
