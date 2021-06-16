@@ -1,14 +1,12 @@
 package classes;
 
 public class Marca {
-    protected int idMarca;
-    protected String descricaoMarca;
-    public int count;
+    private int idMarca;
+    private String descricaoMarca;
 
 
     public Marca() {
     }
-
 
     public int getIdMarca() {
         return this.idMarca;
@@ -17,41 +15,20 @@ public class Marca {
     public void setIdMarca(int idMarca) {
         this.idMarca = idMarca;
     }
+
+    public String getDescricaoMarca() {
+        return this.descricaoMarca;
+    }
+
     public void setDescricaoMarca(String descricaoMarca) {
         this.descricaoMarca = descricaoMarca;
     }
 
-    public int getCount() {
-        return this.count;
+    public void imprimirMarca(){
+        System.out.println(" \n ---------- Marca ----------");
+        System.out.println("Id: " + this.idMarca);
+        System.out.println("Descricao: " + this.descricaoMarca);
+        System.out.println(" \n ###########################");
     }
 
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-
-
-
-
-
-    public int getId(){
-        return idMarca;
-    }
-
-    public void set_id(int idMarca){
-        this.idMarca = count++;
-    }
-
-    /*public String setDescricaoMarca(){
-
-    }*/
-    
-    public String getDescricaoMarca(String descricaoMarca){
-        return descricaoMarca;
-    }
-
-    /*public Marca(int idMarca) throws Exception {
-        this.set_Id(idMarca);
-        this.setDescricao(descricaoMarca);
-    }*/
 }

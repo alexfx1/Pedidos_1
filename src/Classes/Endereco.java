@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.Scanner;
+
 public class Endereco {
     private int idEndereco;
     private String logradouro; 
@@ -67,6 +69,35 @@ public class Endereco {
 
     public void setBairro(String bairro) {
         this.bairro = bairro;
+    }
+
+    public void cadastroEndereco(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(" \n ---------- Endereco ----------");
+        System.out.println(" \nDigite a idEndereco: ");
+        int idEndereco = scanner.nextInt();
+        System.out.println(" \nDigite o logradouro: ");
+        String logradouro = scanner.next();
+        System.out.println(" \nDigite o numero: ");
+        int numero = scanner.nextInt();
+        System.out.println(" \nDigite a quadra: ");
+        String quadra = scanner.next();
+        System.out.println(" \nDigite o lote(numero): ");
+        float lote = scanner.nextFloat();
+        //estado
+        System.out.println(" \nDigite o bairro: ");
+        String bairro = scanner.next();
+
+        Endereco endereco = new Endereco();
+        endereco.setId(idEndereco);
+        endereco.setLogradouro(logradouro);
+        endereco.setNumero(numero);
+        endereco.setQuadra(quadra);
+        endereco.setLote(lote);
+        endereco.setEstado(estado);
+        endereco.setBairro(bairro);
+        
+        scanner.close();
     }
 
     public void imprimeEndereco(){

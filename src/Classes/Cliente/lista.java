@@ -1,8 +1,10 @@
 package classes.cliente;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Lista {
     public ArrayList<Cliente> Lista = new ArrayList<Cliente>();
+	Scanner scanner = new Scanner(System.in);
 
     public ArrayList<Cliente> inserir(Cliente client) {
 		Lista.add(client);
@@ -34,6 +36,41 @@ public class Lista {
 		}
 		return Lista;
 	}
+
+	public ArrayList<Cliente> buscaID(int idCliente){
+		for(Cliente cliente : Lista){
+			if(cliente.getId() == idCliente){
+				System.out.println("id encontrado\n");
+			} 
+		}
+		return Lista;
+	}
+
+	public ArrayList<Cliente> alterarCliente(int idCliente){
+		System.out.println("Digite a nova razao social: ");
+		String razaosocial = scanner.next();
+		System.out.println("Digite a nova fantasia: ");
+		String fatasia = scanner.next();
+
+		Cliente cliente = buscaID(idCliente).get(idCliente);
+		cliente.setRazaosocial(razaosocial);
+		cliente.setFatasia(fatasia);
+
+		//Cliente clientes = new Cliente();
+		//clientes.setRazaosocial(razaosocial);
+		return Lista;
+	}
+
+
+	public ArrayList<Cliente> getLista() {
+		return this.Lista;
+	}
+
+	public void setLista(ArrayList<Cliente> Lista) {
+		this.Lista = Lista;
+	}
+
+
 
 	/*public ArrayList<Cliente> deletar(int idCliente) {
 		System.out.println("Testando ID...");
