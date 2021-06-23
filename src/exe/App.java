@@ -3,6 +3,14 @@ import java.util.Scanner;
 import views.CadastroCliente;
 import views.CadastroProduto;
 import views.Menu;
+import static views.Menu.CRIAR_CLIENTE;
+import static views.Menu.LISTAR_CLIENTES;
+import static views.Menu.DELETAR_CLIENTE;
+import static views.Menu.ALTERAR_CLIENTE;
+import static views.Menu.CADASTRAR_PRODUTO;
+import static views.Menu.IMPRIMIR_PRODUTO;
+import static views.Menu.DELETAR_PRODUTO;
+import static views.Menu.ALTERAR_PRODUTO;
 
 
 
@@ -13,57 +21,59 @@ public class App {
         CadastroCliente cadastroCliente = new CadastroCliente();
         CadastroProduto cadastroProduto = new CadastroProduto();
 
-        int op;
-
+        String op;
         
         do {
             Menu menu = new Menu();
             menu.imprimeMenu();
-            op = scanner.nextInt();
+            op = scanner.nextLine();
             
-            switch(op){
-                            
+            switch(op) {       
                 
-                case 1:
+                case CRIAR_CLIENTE:
                     cadastroCliente.cadastroC(scanner);
                     break;
                 
 
-                case 2:
+                case DELETAR_CLIENTE:
                     cadastroCliente.deletarCliente(scanner);
                     break;
                 
-                case 3:
+                case LISTAR_CLIENTES:
                     cadastroCliente.imprimir();
                     break;
                 
 
-                case 4:
+                case ALTERAR_CLIENTE:
                     cadastroCliente.alterarC(scanner);
                     break;
                 
-                case 5:
+                case CADASTRAR_PRODUTO:
                     cadastroProduto.cadastroP(scanner);
                     break;
 
-                case 6:
+                case IMPRIMIR_PRODUTO:
                     cadastroProduto.imprimirP();                   
                     break;
                 
-                case 7: 
+                case DELETAR_PRODUTO: 
                     cadastroProduto.deletarProdut(scanner);
                     break;
 
-                case 8:
+                case ALTERAR_PRODUTO:
                     cadastroProduto.alterarP(scanner);
                     break;
 
                 default:
+                    if(op.matches("[a-z]*") || op.matches("[A-Z]*")) {
+                        System.out.print("\n Digite uma opcao novamente! Ou encerre");
+                    } 
+                    else {
                     System.out.print("\n Encerrando...");
+                    }
                     break;
             }
-        } while(op != 9);
+        } while(!op.equals("9"));
         scanner.close();    
-    }
-    
+    }    
 }

@@ -13,8 +13,8 @@ public class CadastroCliente {
     
     public void cadastroC(Scanner scanner){
         System.out.println(" \n ---------- Cliente ---------- ");
-        System.out.println(" \nDigite o id: ");
-        int id = scanner.nextInt();
+        //System.out.println(" \nDigite o id: ");
+        //int id = scanner.nextInt();
         System.out.println(" \nDigite a razaosocial: ");
         String razaosocial = scanner.next();
         System.out.println(" \nDigite a fantasia: ");
@@ -63,7 +63,7 @@ public class CadastroCliente {
         
 
         Cliente cliente = new Cliente();
-        cliente.setId(id);
+        //cliente.setId(id);
         cliente.setRazaosocial(razaosocial);
         cliente.setFatasia(fatasia);
         cliente.setEndereco(endereco);
@@ -90,5 +90,5 @@ public class CadastroCliente {
         int id = scanner.nextInt();
         clientes = listacliente.alterarCliente(id);
     }
-    
+
 }

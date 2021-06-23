@@ -1,4 +1,5 @@
 package classes.cliente;
+
 import classes.Endereco;
 
 public class Cliente {
@@ -6,6 +7,7 @@ public class Cliente {
     private String razaosocial; 
     private String fatasia;
     private Endereco endereco;
+    public int contador=0;
     
     //private int qtdClientes = 0;
 
@@ -27,7 +29,7 @@ public class Cliente {
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id = contador++;
     }
 
     public String getRazaosocial() {
