@@ -1,13 +1,10 @@
 package classes.cliente;
 
-import classes.Endereco;
-
 public class Cliente {
     private int id;
     private String razaosocial; 
     private String fatasia;
     private Endereco endereco;
-    public int contador=0;
     
     //private int qtdClientes = 0;
 
@@ -20,7 +17,6 @@ public class Cliente {
     }*/
 
     public Cliente(){
-
     }
 
 
@@ -29,7 +25,7 @@ public class Cliente {
     }
 
     public void setId(int id) {
-        this.id = contador++;
+        this.id = id;
     }
 
     public String getRazaosocial() {
@@ -64,14 +60,5 @@ public class Cliente {
         System.out.println("fantasia: " + this.fatasia);
         endereco.imprimeEndereco();
     }
-
-    /*@Override
-    public String toString() {
-        return " id='" + id +  
-            " " +
-            ", razaosocial='" + razaosocial + " " +
-            ", fatasia='" + fatasia + " " +
-            ", endereco='" + endereco;
-    }*/
         
 }

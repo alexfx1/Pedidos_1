@@ -3,6 +3,8 @@ import java.util.Scanner;
 import views.CadastroCliente;
 import views.CadastroProduto;
 import views.Menu;
+import views.MenuPedido;
+
 import static views.Menu.CRIAR_CLIENTE;
 import static views.Menu.LISTAR_CLIENTES;
 import static views.Menu.DELETAR_CLIENTE;
@@ -11,6 +13,7 @@ import static views.Menu.CADASTRAR_PRODUTO;
 import static views.Menu.IMPRIMIR_PRODUTO;
 import static views.Menu.DELETAR_PRODUTO;
 import static views.Menu.ALTERAR_PRODUTO;
+import static views.Menu.FAZER_PEDIDO;
 
 
 
@@ -26,6 +29,7 @@ public class App {
         do {
             Menu menu = new Menu();
             menu.imprimeMenu();
+            MenuPedido menuPedido = new MenuPedido();
             op = scanner.nextLine();
             
             switch(op) {       
@@ -64,13 +68,18 @@ public class App {
                     cadastroProduto.alterarP(scanner);
                     break;
 
+                case FAZER_PEDIDO:
+                    menuPedido.opcoesMenuPedido(scanner);
+                    break;
+
                 default:
-                    if(op.matches("[a-z]*") || op.matches("[A-Z]*")) {
+                    /*if(op.matches("[a-z]*") || op.matches("[A-Z]*")) {
                         System.out.print("\n Digite uma opcao novamente! Ou encerre");
                     } 
                     else {
                     System.out.print("\n Encerrando...");
-                    }
+                    }*/
+                    System.out.print("\n ...");
                     break;
             }
         } while(!op.equals("9"));

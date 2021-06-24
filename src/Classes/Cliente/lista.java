@@ -1,16 +1,15 @@
 package classes.cliente;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Lista {
     public ArrayList<Cliente> Lista = new ArrayList<Cliente>();
 	Scanner scanner = new Scanner(System.in);
 
     public ArrayList<Cliente> inserir(Cliente client) {
-		int contador = client.contador;
+
 		Lista.add(client);
-		contador = contador + 1;
+		
 		return Lista;
 	}
 
@@ -18,11 +17,27 @@ public class Lista {
 		for(Cliente client : Lista){
 			if(client.getId() == idCliente){
 				throw new Error("ID ja existente digite outro novamente!!");
-				
 			} 
 		}
 		return Lista;
 	}
+
+
+	/*public ArrayList<Cliente> deletar(int idCliente) {
+		System.out.println("Testando ID...");
+		for(Cliente cliente : Lista){
+			if(cliente.getId() != idCliente){
+				System.out.println("Digite outro id - id n encontrado");
+				return Lista;
+			}
+			else {
+				Lista.remove(cliente);
+				System.out.println("Cliente deletado com Sucesso!");
+				return Lista;
+			}
+		}
+		return Lista;
+	}*/
 
 	public Cliente buscaID(int idCliente){
 		for(Cliente cliente : Lista){
@@ -32,11 +47,6 @@ public class Lista {
 			} 
 		}
 		return new Cliente();
-	}
-
-	public int contadorID(int cont){
-		cont = Lista.stream().mapToInt(Cliente::getId).max().orElse(0);
-		return new AtomicInteger(cont).get();
 	}
 
 	public ArrayList<Cliente> alterarCliente(int idBusca){
@@ -50,6 +60,8 @@ public class Lista {
 		cliente.setRazaosocial(razaosocial);
 		cliente.setFatasia(fatasia);
 
+		//Cliente clientes = new Cliente();
+		//clientes.setRazaosocial(razaosocial);
 		return Lista;
 	}
 
@@ -75,19 +87,10 @@ public class Lista {
 		System.out.println("Cliente com esse id não encontrado!");
 		return Lista;
 	}
-/*public ArrayList<Cliente> deletar(int idCliente) {
-		System.out.println("Testando ID...");
-		for(Cliente cliente : Lista){
-			if(cliente.getId() != idCliente){
-				System.out.println("Digite outro id - id n encontrado");
-				return Lista;
-			}
-			else {
-				Lista.remove(cliente);
-				System.out.println("Cliente deletado com Sucesso!");
-				return Lista;
-			}
-		}
+
+	/*public ArrayList<Cliente> alterar(Cliente client){
+		Lista.set(int index, Cliente Element);
 		return Lista;
 	}*/
+	
 }

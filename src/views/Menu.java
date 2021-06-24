@@ -10,10 +10,11 @@ public class Menu {
     public static final String IMPRIMIR_PRODUTO = "6";
     public static final String DELETAR_PRODUTO = "7";
     public static final String ALTERAR_PRODUTO = "8";
+    public static final String FAZER_PEDIDO = "P";
 
 
     public void imprimeMenu(){
-        System.out.println("\n\n\n\n");
+        System.out.println("\n\n");
         System.out.println("############ MENU DE OPCOES #############");
         System.out.println("################ Digite #################");
         System.out.println("1. Preencher Cliente ");
@@ -24,6 +25,7 @@ public class Menu {
         System.out.println("6. Imprimir lista de produtos ");
         System.out.println("7. Deletar produto por id ");
         System.out.println("8. Alterar dados do produto");
+        System.out.println("P. Fazer o Pedido");
         System.out.println("9. Encerrar programa");
         System.out.println("#########################################");
     }

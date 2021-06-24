@@ -1,5 +1,4 @@
 package classes.produto;
-import classes.Marca;
 
 public class Produto extends Marca {
     private int idProduto;
